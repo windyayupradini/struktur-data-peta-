@@ -18,3 +18,23 @@ class Peta:
                 if kotaDihapus in self.cityList[kotalain]:
                     self.cityList[kotalain].remove(kotaDihapus)
             del self.cityList[kotaDihapus]
+            return True
+        return False
+    
+    def tambahkanJalan(self, kota1, kota2):
+        if kota1 in self.cityList and kota2 in self.cityList:
+            if len(self.cityList[kota1]) < 10 and len(self.cityList[kota2]) < 10:
+                self.cityList[kota2].append(kota1)
+                self.cityList[kota1].append(kota2)
+                return True
+        return False
+    
+    def hapusJalan(self, kota1, kota2):
+        if kota1 in self.cityList and kota2 in self.cityList:
+            self.cityList[kota2].remove(kota1)
+            self.cityList[kota1].remove(kota2)
+            return True
+        return False
+
+peta_indonesia = Peta()
+peta_indonesia.tambahkanKota("Surabaya")
