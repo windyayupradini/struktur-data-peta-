@@ -38,3 +38,22 @@ class Peta:
 
 peta_indonesia = Peta()
 peta_indonesia.tambahkanKota("Surabaya")
+peta_indonesia.tambahkanKota("Gresik")
+peta_indonesia.tambahkanKota("Sidoarjo")
+peta_indonesia.tambahkanKota("Lamongan")
+peta_indonesia.tambahkanKota("Mojokerto")
+peta_indonesia.tambahkanKota("Pasuruan")
+peta_indonesia.tambahkanKota("Kediri")
+peta_indonesia.tambahkanKota("Nganjuk")
+peta_indonesia.tambahkanKota("Malang")
+peta_indonesia.tambahkanKota("Jombang")
+
+for kota1 in peta_indonesia.cityList:
+    for kota2 in peta_indonesia.cityList:
+        if kota1 != kota2:
+            peta_indonesia.tambahkanJalan(kota1, kota2)
+
+peta_indonesia.printPeta()
+print('------------------------------')
+peta_indonesia.hapusKota("Jombang")
+peta_indonesia.printPeta()
